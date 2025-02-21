@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Image Switcher</title>
+<style>
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+.container {
+  text-align: center;
+}
+
+.image-container {
+  margin: 20px 0;
+  position: relative;
+  width: 300px; 
+  height: 200px; 
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.image-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.image-container img.hidden {
+  opacity: 0;
+}
+
+.buttons {
+  display: flex;
+  gap: 20px;
+}
+
+button {
+  padding: 15px 30px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button:nth-child(1) {
+  background-color: #4CAF50;
+  color: white;
+}
+
+button:nth-child(2) {
+  background-color: #008CBA;
+  color: white;
+}
+
+button:hover {
+  filter: brightness(1.1);
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="image-container">
+    <img id="image1" src="https://media.istockphoto.com/id/849220498/photo/blue-tiger-butterfly-on-a-pink-zinnia-flower-with-green-background.webp?a=1&b=1&s=612x612&w=0&k=20&c=JP_yT4yOA5Lmv0NX7dANj5CahiAZNwy7RfjGoUyM938=" alt="Image 1">
+    <img id="image2" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.india.com%2Fviral%2Fhappy-teddy-day-2017-importance-significance-of-each-teddy-on-this-valentine-week-932192%2F&psig=AOvVaw27_UahcWX86oa8LKLV7FDC&ust=1740240612254000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCNCsqLST1YsDFQAAAAAdAAAAABAE"alt="Image 2" class="hidden">
+  </div>
+
+  <div class="buttons">
+    <button onclick="showImage(1)">Show Image 1</button>
+    <button onclick="showImage(2)">Show Image 2</button>
+  </div>
+</div>
+
+<script>
+function showImage{
+  const image1 = document.getElementById('image1');
+  const image2 = document.getElementById('image2');
+  document.getElenmentById('image2');
+
+  if (imageNumber === 1) {
+    image1.classList.remove('hidden');
+    image2.classList.add('hidden');
+  } else if (imageNumber === 2) {
+    image1.classList.add('hidden');
+    image2.classList.remove('hidden');
+  }
+}
+</script>
+
+</body>
+</html>
